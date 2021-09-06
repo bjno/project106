@@ -1,0 +1,304 @@
+
+
+#patchview {
+	position: absolute;
+	left: 561px;
+	width: 200px;
+	height: 314px;
+	top: 60px;
+	overflow: auto;
+	background-color: #e0e0e0;
+}
+
+#patchlist {
+	width: 100%;
+}
+
+.patchButton {
+	padding: 2px;
+	width:97%;
+	border: 1px solid;
+	font-family: 'Open sans';
+	font-size:9px;
+	font-weight: 300;
+	text-align: left;
+	white-space: pre;
+	background-color: #c0c0c0;
+	border-color: #c0c0c0;
+}
+
+.patchButton.activated {
+	background-color: #69abc3;
+	font-weight: 300;
+	border-color: #000000;
+}
+
+.patchButton.selected {
+	background-color: #a0a0a0;
+}
+
+.patchButton:hover {
+	background-color:#408c99;
+}
+
+.patchButton:active {
+	background-color:#F08c99;
+}
+
+.patchButton:focus {
+	outline: none;
+}
+
+
+option.system {
+	font-family: 'Open sans';
+	font-size:12px;
+	font-weight: 300;
+}
+
+input.system {
+	position: absolute;
+	font-family: 'Open sans';
+	font-size:10px;
+}
+
+#channelselector {
+	left: 120px;
+	top: 16px;
+	width: 40px;
+}
+
+#hwselector {
+	left: 220px;
+	top: 10px;
+	width: 100px;
+}
+
+select.system {
+	position: absolute;
+	/*font-family: 'Open sans';*/
+	font-family: 'IBM Plex Mono';
+	font-size:8px;
+	font-weight: 300;
+	height: 20px;
+	color: #000000;
+}
+
+select.system:focus {
+	outline: none;
+}
+
+#outputportselector {
+	left: 5px;
+	top: 16px;
+	width: 100px;
+}
+
+#patchselector {
+	left: 5px;
+	top: 10px;
+	width: 150px;
+}
+
+button.system {
+	width:65px;
+	height:20px;
+	border: none;
+	font-family: 'Open sans';
+	font-size:8px;
+	font-weight: 300;
+	text-align: center;
+	border-radius: 5px;
+	position: absolute;
+	background-color: white;
+}
+
+
+button.system:active {
+	background-color:#baba9a;
+}
+
+button.system:focus {
+	outline: none;
+}
+
+button.system:disabled {
+	background-color:#d0d0d0;
+}
+
+#buttonUndo {
+	top: 10px;
+	left: 400px;
+}
+
+#buttonCompare {
+	top: 10px;
+	left: 470px;
+}
+
+#buttonSave {
+	top: 10px;
+	left: 411px;
+}
+
+#buttonSaveCopy {
+	top: 10px;
+	left: 481px;
+}
+
+#buttonRemoveAll {
+	top: 10px;
+	left: 551px;
+}
+
+#buttonRemoveSelected{
+	top: 10px;
+	left: 621px;
+}
+
+#j106importer {
+	visibility: hidden;
+}
+
+#jepimporter {
+	visibility: hidden;
+}
+
+#buttonTape {
+	top: 10px;
+	left: 421px;
+	width: 100px;
+}
+
+#button106 {
+	top: 10px;
+	left: 330px;
+}
+
+#buttoninit {
+	top: 10px;
+	left: 260px;
+}
+
+#buttonJep {
+	top: 10px;
+	left: 641px;
+	width: 100px;
+}
+
+#systemView {
+	position: absolute;
+	width: 541px;
+	height:40px;
+	top: 10px;
+	left: 10px;
+	background-color: #69abc3;//#505251;
+}
+
+#systemViewLow {
+	position: absolute;
+	width: 541px;
+	height:40px;
+	top: 384px;
+	left: 10px;
+	background-color: #69abc3;//#505251;
+}
+
+#patchName {
+    position: absolute;
+    text-align: left;
+    vertical-align: middle;
+    background-color:#69abc3;
+    color: #FFFFFF;
+    left: 5px;
+    top:11px;
+    width: 536px;
+    height: 20px;
+    border: 0px;
+    font-family: monospace;
+    font-size:12.4px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#midiOutputLabel {
+  top: 5px;
+  left: 7px;
+    width: 152px;
+}
+
+#midiChannelLabel {
+  top: 5px;
+  left: 120px;
+    width: 152px;
+}
+
+#midiSysex {
+    position: absolute;
+    text-align: left;
+    vertical-align: middle;
+    background-color:#FFFFFF;
+    color: #000000;
+    left: 297px;
+    top:16px;
+		padding: 4px;
+    width: 230px;
+    height: 12px;
+    border: 1px black;
+    font-family: 'IBM Plex Mono';
+    font-size:8px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#info {
+    position: absolute;
+    text-align: left;
+    vertical-align: middle;
+    background-color:#FFFFFF;
+    color: #000000;
+    left: 175px;
+    top:16px;
+		padding: 4px;
+    width: 100px;
+    height: 12px;
+    border: 1px black;
+    font-family: 'IBM Plex Mono';
+    font-size:8px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#midiSysexLabel {
+  top: 5px;
+  left: 297px;
+	width: 152px;
+}
+
+#infoLabel {
+  top: 5px;
+  left: 175px;
+	width: 152px;
+}
+
+.highlight {
+	color: #FF0000;
+}
+
+.systemlbl {
+  height: 15px;
+  width: 28px;
+  position: absolute;
+  font-family: 'Open Sans';
+    /*font-style: normal;
+  font-variant: normal;*/
+  font-weight: 300;
+  text-align: left;
+  font-size:9px;
+  color: #FFFFFF;
+  line-height: 9px;
+  top:60px;
+}

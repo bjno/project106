@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="28px" height="96px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<style type="text/css">
+		line {
+			stroke: #c0c0c0;
+			fill: transparent;
+			stroke-width: 0.5;
+		}
+	</style>
+
+	<line x1="0" x2="27" y1="1" y2="1"/>
+	<line x1="0" x2="27" y1="9" y2="9"/>
+	<line x1="0" x2="27" y1="17" y2="17"/>
+	<line x1="0" x2="27" y1="25" y2="25"/>
+	<line x1="0" x2="27" y1="33" y2="33"/>
+	<line x1="0" x2="27" y1="41" y2="41"/>
+	<line x1="0" x2="27" y1="49" y2="49"/>
+	<line x1="0" x2="27" y1="57" y2="57"/>
+	<line x1="0" x2="27" y1="65" y2="65"/>
+	<line x1="0" x2="27" y1="73" y2="73"/>
+	<line x1="0" x2="27" y1="81" y2="81"/>
+</svg>
+

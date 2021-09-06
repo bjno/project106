@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="28px" height="96px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		line {
+			stroke: #ccc;
+			fill: transparent;
+			stroke-width: 0.5;
+		}
+	</style>
+	<line x1="0" x2="27" y1="1" y2="1"/>
+	<line x1="0" x2="27" y1="28" y2="28"/>
+	<line x1="0" x2="27" y1="55" y2="55"/>
+	<line x1="0" x2="27" y1="81" y2="81"/>
+</svg>
+

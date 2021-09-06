@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="13px" height="9px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<style>
+		polyline {
+			fill: transparent;
+			stroke-width: 0.5;
+			stroke: black;
+		}
+		polyline.dashed {
+			stroke-dasharray: 2,2;
+		}
+	</style>
+	<polyline points="1 7.5, 12 1, 12 7.5"/>
+
+</svg>

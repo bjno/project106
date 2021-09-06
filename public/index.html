@@ -1,0 +1,273 @@
+
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="./css/global.css">
+<link rel="stylesheet" type="text/css" href="./css/app.css">
+<link rel="stylesheet" type="text/css" href="./css/other.css">
+<title>j106.net - Juno-106 editor</title>
+</head>
+<body>
+
+
+<div id="big">
+	<img id="logo" width="300" src="./img/logo.svg">
+	<div id="appcontainer">
+		<div id="guiview">
+			<div id="lfo" class="rs">
+				LFO<img src="./img/vert.svg" class="vert">
+			</div>
+
+			<div id="dco" class="rs">
+				DCO<img src="./img/vert.svg" class="vert">
+			</div>
+
+			<div id="hpf" class="rs">
+				HPF
+			</div>
+
+			<div id="vcf" class="rs">
+				VCF<img src="./img/vert.svg" class="vert">
+			</div>
+
+			<div id="vca" class="rs">
+				VCA
+				<img src="./img/vert.svg" class="vert">
+			</div>
+
+			<div id="env" class="rs">
+				ENV<img src="./img/vert.svg" class="vert">
+			</div>
+
+			<div id="chorus" class="rs">
+				CHORUS
+			</div>
+
+			<div class="slice upperrow" id="sliderLfoRateBg">
+				<div class="lstick l">10 5 0</div>
+				<div class="lslbl">RATE</div>
+				<img src="./img/grid.svg" class="grid">
+				<input class="ls" id="sliderLfoRate" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice upperrow" id="sliderLfoDelayTimeBg">
+				<div class="lslbl">DELAY TIME</div>
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick r">10 5 0</div>
+				<input class="ls" id="sliderLfoDelayTime" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice upperrow" id="buttonDcoOct16Bg">
+				<div class="btnlbl">&nbsp16'</div>
+				<div class="led" id="ledDcoOct16"></div>
+				<button class="grey" id="buttonDcoOct16"></button>
+			</div>
+
+			<div class="slice upperrow" id="buttonDcoOct8Bg">
+				<div class="lslbl">RANGE</div>
+				<div class="btnlbl">&nbsp8'</div>
+				<div class="led" id="ledDcoOct8"></div>
+				<button class="grey" id="buttonDcoOct8"></button>
+			</div>
+
+			<div class="slice upperrow" id="buttonDcoOct4Bg">
+				<div class="btnlbl">&nbsp4'</div>
+				<button class="grey" id="buttonDcoOct4"></button>
+				<div class="led" id="ledDcoOct4"></div>
+			</div>
+
+			<div class="slice upperrow" id="sliderDcoLfoBg">
+				<div class="lstick l">10 5 0</div>
+				<div class="lslbl">LFO</div>
+				<img src="./img/grid.svg" class="grid">
+				<input class="ls" id="sliderDcoLfo" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice upperrow" id="sliderDcoPwmBg">
+				<div class="lslbl">PWM</div>
+				<div class="lstick r">10 5 0</div>
+				<img src="./img/grid.svg" class="grid">
+				<input class="ls" id="sliderDcoPwm" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice upperrow" id="switchDcoModeBg">
+				<img src="./img/dcoline.svg" class="dcoline">
+				<div class="swlblup">LFO</div>
+				<input class="switch" id="switchDcoMode" type="range" min="0" max="1">
+				<div class="swlbldown">MAN</div>
+			</div>
+
+			<div class="slice upperrow" id="buttonDcoOscSquareBg">
+				<div class="lslbl"><img src="./img/pwm.svg"></div>
+
+				<div class="led" id="ledDcoOscSquare"></div>
+				<button class="grey" id="buttonDcoOscSquare"></button>
+			</div>
+
+			<div class="slice upperrow" id="buttonDcoOscSawBg">
+				<div class="lslbl"><img src="./img/saw.svg"></div>
+				<div class="led" id="ledDcoOscSaw"></div>
+				<button class="grey" id="buttonDcoOscSaw"></button>
+			</div>
+
+			<div class="slice upperrow" id="sliderDcoSubBg">
+				<div class="lstick l">10 5 0</div>
+				<div class="lslbl"><img src="./img/sub.svg">SUB</div>
+				<img src="./img/grid.svg" class="grid">
+				<input class="ls" id="sliderDcoSub" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice upperrow" id="sliderDcoNoiseBg">
+				<div class="lslbl">NOISE</div>
+				<div class="lstick r">10 5 0</div>
+				<img src="./img/grid.svg" class="grid">
+				<input class="ls" id="sliderDcoNoise" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice upperrow" id="switchHpfFreqBg">
+				<div class="lslbl">FREQ</div>
+				<div class="lstick r hpf">3 2 1 0</div>
+				<div class="lstick l hpf">3 2 1 0</div>
+				<img src="./img/gridhpf.svg" class="grid">
+				<input class="ls" id="switchHpfFreq" type="range" min="0" max="3">
+			</div>
+
+			<div class="slice lowerrow" id="sliderVcfFreqBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick l">10 5 0</div>
+				<div class="lslbl">FREQ</div>
+				<input class="ls" id="sliderVcfFreq" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderVcfResBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick r">10 5 0</div>
+				<div class="lslbl">RES</div>
+				<input class="ls" id="sliderVcfRes" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="switchVcfModeBg">
+				<img src="./img/vcfline.svg" class="vcfline">
+				<div class="swlblup"><img src="./img/envelope.svg" class="noflipv"></div>
+				<input class="switch" id="switchVcfMode" type="range" min="0" max="1">
+				<div class="swlbldown"><img src="./img/envelope.svg" class="flipv"></div>
+			</div>
+
+			<div class="slice lowerrow" id="sliderVcfEnvBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick l">10 5 0</div>
+				<div class="lslbl">ENV</div>
+				<input class="ls" id="sliderVcfEnv" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderVcfLfoBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lslbl">LFO</div>
+				<input class="ls" id="sliderVcfLfo" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderVcfKybdBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick r">10 5 0</div>
+				<div class="lslbl">KYBD</div>
+				<input class="ls" id="sliderVcfKybd" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="switchVcaModeBg">
+				<div class="swlblup"><img src="./img/envelope.svg" class="noflipv">ENV</div>
+				<input class="switch" id="switchVcaMode" type="range" min="0" max="1">
+				<div class="swlbldown">GATE<img src="./img/gate.svg" class="noflipv"></div>
+			</div>
+
+			<div class="slice lowerrow" id="sliderVcaLevelBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick l">+5 0 -5</div>
+				<div class="lslbl">LEVEL</div>
+				<input class="ls" id="sliderVcaLevel" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderEnvAttackBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick l">10 5 0</div>
+				<div class="lslbl">A</div>
+				<input class="ls" id="sliderEnvAttack" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderEnvDecayBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lslbl">D</div>
+				<input class="ls" id="sliderEnvDecay" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderEnvSustainBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lslbl">S</div>
+				<input class="ls" id="sliderEnvSustain" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="sliderEnvReleaseBg">
+				<img src="./img/grid.svg" class="grid">
+				<div class="lstick r">10 5 0</div>
+				<div class="lslbl">R</div>
+				<input class="ls" id="sliderEnvRelease" type="range" min="0" max="127">
+			</div>
+
+			<div class="slice lowerrow" id="buttonChorusOffBg">
+				<img src="./img/chorusline.svg" class="chorusline">
+				<div class="lslbl">OFF</div>
+				<button class="grey" id="buttonChorusOff"></button>
+			</div>
+
+			<div class="slice lowerrow" id="buttonChorus1Bg">
+				<div class="lslbl">I</div>
+				<div class="led" id="ledChorus1"></div>
+				<button class="grey" id="buttonChorus1"></button>
+			</div>
+
+			<div class="slice lowerrow" id="buttonChorus2Bg">
+				<div class="lslbl">II</div>
+				<div class="led" id="ledChorus2"></div>
+				<button class="grey" id="buttonChorus2"></button>
+			</div>
+
+		</div>
+
+		<div id="systemView">
+			<div id="patchName" class="fixed"></div>
+			<select class="system" id="patchselector" onchange="loadPatch()">
+				<option value="-1">---</option>
+			</select>
+			<button class="system" id="buttoninit" onclick="setInitialPatch()">INIT</button>
+			<button class="system" id="button106" onclick="import106()">IMPORT .SYX</button>
+			<input type="file" id="j106importer" accept=".syx">
+			<button class="system" id="buttonUndo" onclick="undo()">UNDO</button>
+			<button class="system" id="buttonCompare" onmousedown="startCompare()" onmouseup="stopCompare()">COMPARE</button>
+		</div>
+
+		<div id="systemViewLow">
+			<div id="midiOutputLabel" class="systemlbl">MIDI output port</div>
+			<select class="system" id="outputportselector" onchange="setMidiOutputPort()">
+				<option class="system" value="0">---</option>
+			</select>
+			<div id="midiChannelLabel" class="systemlbl">Channel</div>
+			<select class="system" id="channelselector" onchange="setMidiChannel()">
+				<option value="1">-</option>
+			</select>
+			<div id="midiSysexLabel" class="systemlbl">MIDI sysex</div>
+			<div id="midiSysex" class="fixed">---</div>
+			<div id="infoLabel" class="systemlbl">Status</div>
+			<div id="info" class="fixed">---</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="./js/importers.js"></script>
+<script src="./js/midiaccess.js"></script>
+<script src="./js/gui.js"></script>
+<script src="./js/patchloader.js"></script>
+
+</body>
+
+</html>
