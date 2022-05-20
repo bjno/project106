@@ -238,6 +238,7 @@
 			<select class="system" id="patchselector" onchange="loadPatch()">
 				<option value="-1">---</option>
 			</select>
+			<button class="system" id="buttonSaveLibrary" onclick="saveLibrary()">SAVE LIB</button>
 			<button class="system" id="buttoninit" onclick="setInitialPatch()">INIT</button>
 			<button class="system" id="button106" onclick="import106()">IMPORT .SYX</button>
 			<input type="file" id="j106importer" accept=".syx">
@@ -263,6 +264,7 @@
 	</div>
 </div>
 
+<script src="./js/lib/FileSaver.js"></script>
 <script src="./js/importers.js"></script>
 <script src="./js/midiaccess.js"></script>
 <script src="./js/gui.js"></script>

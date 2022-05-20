@@ -9,7 +9,8 @@ xhttp.onreadystatechange = function() {
         console.log("Successful load of " + library.length + " patches.");
         populatePatchList();
     } else {
-      console.log(this.status);
+      console.log("FEL" + this.status);
+      populatePatchList();
     }
 };
 xhttp.open("GET", "data/factorypatches.json", true);
@@ -18,13 +19,29 @@ xhttp.send();
 function populatePatchList() {
   var select = document.getElementById("patchselector");
 
+  clearPatchList();
+
+  var opt = document.createElement("option");
+  opt.text = "---";
+  opt.value = -1;
+  select.add(opt);
+
   for (var i = 0; i < library.length; i++) {
-    var opt = document.createElement("option");
+    opt = document.createElement("option");
     opt.text = library[i].name;
     opt.value = i;
-    document.getElementById("patchselector").add(opt);
+    select.add(opt);
   }
 }
+
+function clearPatchList() {
+  var select = document.getElementById("patchselector");
+  var L = select.options.length - 1;
+  for(var i = L; i >= 0; i--) {
+    select.remove(i);
+  }
+}
+
 
 function loadPatch() {
   patchIndex = parseInt(document.getElementById("patchselector").value);

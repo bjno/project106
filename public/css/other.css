@@ -175,6 +175,11 @@ button.system:disabled {
 	left: 330px;
 }
 
+#buttonSaveLibrary {
+	top: 10px;
+	left: 190px;
+}
+
 #buttoninit {
 	top: 10px;
 	left: 260px;

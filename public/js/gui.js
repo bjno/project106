@@ -82,11 +82,6 @@ function registerEventHandlers() {
 	}
 }
 
-function importTape() {
-	prepareTape();
-	document.getElementById("tapedialog").showModal();
-}
-
 function import106() {
 	var selector = document.getElementById("j106importer");
 	selector.click();

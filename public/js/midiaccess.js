@@ -17,6 +17,37 @@ function onMIDISuccess(midiAccess) {
   midiAccess.onstatechange = function(e) {handleMidiStateChangeEvent(e);};
 }
 
+
+
+function receiveMidiMessage(message) {
+  console.log("MIDI message received");
+  var data = message.data;
+
+  if (data.length == 24) {
+    if (data[0] == 0xF0 && data[1] == 0x41 && data[2] == 0x30 && data[23] == 0xF7) {
+      // 3rd byte is 0x30 at programe change, 0x31 at manual MODE
+      // 4th byte is position
+      if (data[3] == midiChannel-1) {
+        var name = "";
+        var pnr = data[3];
+        if (pnr / 64 == 0) {
+          name += "A";
+        } else {
+          name += "B";
+        }
+        pnr = pnr % 64;
+        name += pnr / 8 + 1;
+        name += pnr % 8 + 1;
+
+        var patchdata = Array.from(data).slice(5,23);
+        console.log("Roland Juno-106 patch " + name + " received on channel " + midiChannel);
+        console.log(patchdata);
+        //quietUpdateFromSysex(patchdata);
+      }
+    }
+  }
+}
+
 function onMIDIFailure(msg) {
   window.alert("Access to MIDI not granted.");
 }
@@ -34,9 +65,18 @@ function handleMidiStateChangeEvent(event) {
   } else if (event.port.state == "disconnected") {
     console.log("Other port disconnected");
   } else if (event.port.state == "connected") {
-    console.log("Other port connected");
+    console.log("Other port connected: " + event.port.name);
   }
   populateMidiDevices();
+}
+
+function setMidiInputPort() {
+  midi.inputs.forEach(function(port) {
+    if (port.name === midiOutput.name) {
+      console.log("Listening to port: " + port.name);
+      port.onmidimessage = receiveMidiMessage;
+    }
+  })
 }
 
 function setMidiOutputPort() {
@@ -46,12 +86,18 @@ function setMidiOutputPort() {
     midiOutput = null;
   } else {
     midiOutput = midi.outputs.get(selectedValue);
+    setMidiInputPort();
   }
 }
 
 function setMidiChannel() {
   midiChannel = parseInt(document.getElementById("channelselector").value);
   sendPatchSysex(sysex, 3);
+
+  midi.inputs.forEach(function(key) {
+    console.log(key.name);
+    console.log(key.id);
+  })
 }
 
 function removeMidiHeader(midiSysex) {
