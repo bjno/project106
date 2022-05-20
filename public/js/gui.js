@@ -82,6 +82,11 @@ function registerEventHandlers() {
 	}
 }
 
+function saveLibrary() {
+	var blob = new Blob([JSON.stringify(library)], {type: "text/plain;charset=utf-8"});
+	saveAs(blob, "lib.json");
+}
+
 function import106() {
 	var selector = document.getElementById("j106importer");
 	selector.click();
